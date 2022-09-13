@@ -2,7 +2,9 @@ FROM ubuntu
 
 MAINTAINER nikhil2584@gmail.com
 
+USER admin
 RUN mkdir /opt/tomcat/
+RUN chown -R admin /opt/tomcat
 
 WORKDIR /opt/tomcat
 COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
