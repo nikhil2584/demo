@@ -5,7 +5,7 @@ MAINTAINER nikhil2584@gmail.com
 RUN mkdir /opt/tomcat/
 
 WORKDIR /opt/tomcat
-RUN mv apache*.tar.gz /opt/tomcat/tmp/.
+ADD ./apache-tomcat-8.5.82.tar.gz /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-8.5.82-src/* /opt/tomcat/.
 RUN apt-get install java
