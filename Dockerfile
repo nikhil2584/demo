@@ -2,9 +2,9 @@ FROM ubuntu
 
 MAINTAINER nikhil2584@gmail.com
 
-USER tomcat
+USER root
 RUN mkdir /opt/tomcat/
-RUN chown -R tomcat /opt/tomcat
+
 
 WORKDIR /opt/tomcat
 COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
@@ -19,4 +19,4 @@ WORKDIR /opt/tomcat/webapps
 
 EXPOSE 8080
 
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "root", "run"]
