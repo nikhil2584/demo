@@ -8,7 +8,8 @@ WORKDIR /opt/tomcat
 COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-8.5.82-src/* /opt/tomcat/.
-RUN apt-get install default-jdk
+RUN apt update
+RUN apt install default-jdk
 RUN java -version
 
 WORKDIR /opt/tomcat/webapps
