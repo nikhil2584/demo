@@ -1,5 +1,4 @@
 FROM ubuntu
-<<<<<<< HEAD
 
 MAINTAINER nikhil2584@gmail.com
 
@@ -17,17 +16,3 @@ WORKDIR /opt/tomcat/webapps
 EXPOSE 8080
 
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
-=======
-LABEL maintainer="nikhil2584@gmail.com"
-
-WORKDIR /root
-RUN mkdir /usr/tomcat
-
-RUN apt-get update && apt-get -y install apache2
-EXPOSE 8888
-
-ENTRYPOINT ["/usr/sbin/apachectl"]
-CMD ["-D", "FOREGROUND"]
-COPY index.html /var/www/html/
-VOLUME /var/www/html
->>>>>>> 55858d4ae8112f4de063cd8234c402044521514d
