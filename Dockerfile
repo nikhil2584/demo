@@ -14,7 +14,7 @@ RUN apt update
 RUN apt install -y default-jdk
 RUN java -version
 
-WORKDIR /opt/tomcat/webapps
+#WORKDIR /opt/tomcat/webapps
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
 EXPOSE 8080
