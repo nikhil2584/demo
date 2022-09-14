@@ -4,8 +4,6 @@ MAINTAINER nikhil2584@gmail.com
 
 USER root
 RUN mkdir /opt/tomcat/
-RUN chmod a+rwx /opt/tomcat/*
-
 
 WORKDIR /opt/tomcat
 COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
@@ -19,5 +17,5 @@ RUN java -version
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
 EXPOSE 8080
-
+RUN chmod a+rwx /opt/tomcat/*
 CMD ["/opt/tomcat/bin/catalina.sh", "root", "run"]
