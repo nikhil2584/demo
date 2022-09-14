@@ -8,7 +8,6 @@ MAINTAINER nikhil2584@gmail.com
 
 USER root
 RUN mkdir /opt/tomcat/
-
 WORKDIR /opt/tomcat/
 RUN chmod -R 777 /opt/tomcat
 COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
@@ -19,12 +18,12 @@ RUN apt install -y default-jdk
 RUN java -version
 COPY ./index.html /opt/tomcat/webapps/
 
-WORKDIR /opt/tomcat/bin/
+ENV CATALINA_HOME ~/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
+WORKDIR $CATALINA_HOME/bin
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
-
-LABEL CATALINA_BASE=/opt/tomcat
-LABEL CATALINA_HOME=/opt/tomcat/bin
-#ENTRYPOINT ["/opt/tomcat/bin"]
-CMD ["catalina.sh" "-D", "FOREGROUND"]
-#CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 EXPOSE 8082
+#ENTRYPOINT ["/opt/tomcat/bin"]
+#CMD ["catalina.sh" "-D", "FOREGROUND"]
+CMD ["catalina.sh", "run"]
+
