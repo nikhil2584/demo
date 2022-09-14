@@ -20,7 +20,7 @@ COPY ./index.html /opt/tomcat/webapps/
 
 ENV CATALINA_HOME ~/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
-WORKDIR $CATALINA_HOME/bin
+WORKDIR $CATALINA_HOME/bin/
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 EXPOSE 8082
 #ENTRYPOINT ["/opt/tomcat/bin"]
