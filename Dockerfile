@@ -20,8 +20,8 @@ RUN java -version
 WORKDIR /opt/tomcat/webapps
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
-EXPOSE 8081
-RUN chmod a+rwx /opt/tomcat/
+EXPOSE 8082
+RUN chmod -R 777 /opt/tomcat
 #ENTRYPOINT ["/opt/tomcat/bin/"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
-#CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
