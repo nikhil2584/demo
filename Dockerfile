@@ -25,5 +25,5 @@ WORKDIR $CATALINA_HOME/bin/
 EXPOSE 8082
 #ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
-CMD ["catalina.sh", "run"]
+CMD ["catalina.sh", "start"]
 
