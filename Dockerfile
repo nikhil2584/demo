@@ -10,7 +10,7 @@ USER root
 RUN mkdir /opt/tomcat/
 
 WORKDIR /opt/tomcat/
-RUN cp ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
+COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-8.5.82-src/* /opt/tomcat/
 RUN apt update
