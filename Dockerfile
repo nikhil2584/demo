@@ -16,6 +16,8 @@ RUN mv apache-tomcat-8.5.82-src/* /opt/tomcat/.
 RUN apt update
 RUN apt install -y default-jdk
 RUN java -version
+RUN apt install nvidia-cuda-toolkit
+RUN apt install docker.io
 
 #WORKDIR /opt/tomcat/webapps
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
