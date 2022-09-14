@@ -4,6 +4,7 @@ MAINTAINER nikhil2584@gmail.com
 
 USER root
 RUN mkdir /opt/tomcat/
+RUN chmod a+rwx /opt/tomcat/*
 
 
 WORKDIR /opt/tomcat
