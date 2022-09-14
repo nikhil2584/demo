@@ -22,6 +22,6 @@ WORKDIR /opt/tomcat/webapps
 
 EXPOSE 8081
 RUN chmod a+rwx /opt/tomcat/
-ENTRYPOINT ["/opt/tomcat/bin/"]
+#ENTRYPOINT ["/opt/tomcat/bin/"]
 CMD ["catalina.sh" "-D", "FOREGROUND"]
 #CMD ["/opt/tomcat/bin/catalina.sh", "run"]
