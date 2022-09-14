@@ -12,7 +12,7 @@ RUN mkdir /opt/tomcat/
 #WORKDIR /opt/tomcat/
 ENV WORKPATH /opt/tomcat/
 WORKDIR $WORKPATH
-RUN chmod -R 777 /opt/tomcat
+RUN chmod -R 777 $WORKPATH
 COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-8.5.82-src/* /opt/tomcat/
@@ -29,5 +29,5 @@ ENV PATH $PATH:$CATALINA_HOME/bin:$CATALINA_HOME/lib
 EXPOSE 8082
 #ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+CMD ["$WORKPATH/bin/catalina.sh", "run"]
 
