@@ -24,5 +24,5 @@ COPY ./index.html /opt/tomcat/webapps/
 
 EXPOSE 8082
 ENTRYPOINT ["/opt/tomcat/bin"]
-CMD ["catalina.sh" "-D", "FOREGROUND"]
+CMD ["./catalina.sh" "-D", "FOREGROUND"]
 #CMD ["/opt/tomcat/bin/catalina.sh", "run"]
