@@ -19,7 +19,7 @@ RUN java -version
 COPY ./index.html /opt/tomcat/webapps/
 
 ENV CATALINA_HOME:/opt/tomcat
-ENV PATH $CATALINA_BASE/bin:$PATH
+ENV PATH $CATALINA_HOME/bin:$PATH
 WORKDIR $PATH
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 EXPOSE 8082
