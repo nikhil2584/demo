@@ -18,12 +18,12 @@ RUN apt install -y default-jdk
 RUN java -version
 COPY ./index.html /opt/tomcat/webapps/
 
-ENV CATALINA_BASE:/opt/tomcat
+ENV CATALINA_HOME:/opt/tomcat
 ENV PATH $CATALINA_BASE/bin:$PATH
 WORKDIR $PATH
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 EXPOSE 8082
 #ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
-CMD ["catalina.sh", "start"]
+CMD ["catalina.sh", "run"]
 
