@@ -22,9 +22,9 @@ COPY ./index.html /opt/tomcat/webapps/
 WORKDIR /opt/tomcat/bin/
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
-LABEL CATALINA_HOME=/opt/tomcat
-LABEL CATALINA_HOME=/opt/tomcat
+LABEL CATALINA_BASE=/opt/tomcat
+LABEL CATALINA_HOME=/opt/tomcat/bin
 #ENTRYPOINT ["/opt/tomcat/bin"]
-CMD ["$CATALINA_HOME/bin/catalina.sh" "-D", "FOREGROUND"]
+CMD ["catalina.sh" "-D", "FOREGROUND"]
 #CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 EXPOSE 8082
