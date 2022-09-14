@@ -23,6 +23,6 @@ COPY ./index.html /opt/tomcat/webapps/
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
 EXPOSE 8082
-ENTRYPOINT ["/opt/tomcat/bin/"]
+ENTRYPOINT ["/opt/tomcat/bin"]
 CMD ["catalina.sh" "-D", "FOREGROUND"]
 #CMD ["/opt/tomcat/bin/catalina.sh", "run"]
