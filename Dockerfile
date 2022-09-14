@@ -7,8 +7,11 @@ FROM ubuntu
 MAINTAINER nikhil2584@gmail.com
 
 USER root
+
 RUN mkdir /opt/tomcat/
 #WORKDIR /opt/tomcat/
+ENV WORKPATH /opt/tomcat/
+WORKDIR $WORKPATH
 RUN chmod -R 777 /opt/tomcat
 COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
@@ -17,9 +20,6 @@ RUN apt update
 RUN apt install -y default-jdk
 RUN java -version
 COPY ./index.html /opt/tomcat/webapps/
-
-ENV WORKPATH /opt/tomcat/
-WORKDIR $WORKPATH
 
 ENV CATALINA_HOME /opt/tomcat/
 ENV CATALINA_BASE /opt/tomcat/
