@@ -18,8 +18,8 @@ RUN apt install -y default-jdk
 RUN java -version
 COPY ./index.html /opt/tomcat/webapps/
 
-ENV CATALINA_HOME ~/tomcat
-ENV PATH $CATALINA_HOME/bin:$PATH
+ENV CATALINA_BASE:/opt/tomcat
+ENV PATH $CATALINA_BASE/bin:$PATH
 WORKDIR $CATALINA_HOME/bin/
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 EXPOSE 8082
