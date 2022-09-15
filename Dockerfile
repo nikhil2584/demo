@@ -29,5 +29,5 @@ ENV PATH $PATH:$CATALINA_HOME/bin:$CATALINA_HOME/lib
 EXPOSE 8082
 #ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
-CMD ["$WORKPATH/bin/catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
 
