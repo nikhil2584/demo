@@ -13,9 +13,9 @@ RUN mkdir /opt/tomcat/
 ENV WORKPATH /opt/tomcat/
 WORKDIR $WORKPATH
 
-COPY ./apache-tomcat-8.5.82-src.tar.gz /opt/tomcat/
+COPY ./apache-tomcat-8.5.82.tar.gz /opt/tomcat/
 RUN tar xvfz apache*.tar.gz
-RUN mv apache-tomcat-8.5.82-src/* /opt/tomcat/
+RUN mv apache-tomcat-8.5.82/* /opt/tomcat/
 RUN apt update
 RUN apt install -y default-jdk
 RUN java -version
