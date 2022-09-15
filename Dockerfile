@@ -27,7 +27,7 @@ ENV CATALINA_BASE /opt/tomcat/
 ENV PATH $PATH:$CATALINA_HOME/bin
 #RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 EXPOSE 8082
-#ENTRYPOINT ["/opt/tomcat/bin"]
+ENTRYPOINT ["/opt/tomcat/bin"]
 #CMD ["catalina.sh" "-D", "FOREGROUND"]
 CMD ["catalina.sh", "run"]
 
