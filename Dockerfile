@@ -19,7 +19,7 @@ RUN mv apache-tomcat-8.5.82/* /opt/tomcat/
 RUN apt update
 RUN apt install -y default-jdk
 RUN java -version
-COPY ./index.html /opt/tomcat/webapps/
+COPY ./SampleWebApp.war /opt/tomcat/webapps/
 
 ENV CATALINA_HOME /opt/tomcat/
 ENV CATALINA_BASE /opt/tomcat/
